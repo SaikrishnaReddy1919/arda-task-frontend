@@ -71,4 +71,15 @@ yarn run dev
 ### Process :
  - When clicked on Collect and Exit button, first the function will go throuhg the Arda's contract function then inside the contract, using UniswapV3PoolManager interface it will make a call to UniswapV3PoolManager contract for collecting fees and then second call is to exit from the pool.
 
+ - As of now this process will not work, because we dont have any pools ready on mainnet and testnet.
+
+ Ways to make it work :
+ - Deploy uniswaps contract on testnet then create a pool.
+ - Then create liquidity for any two tokens.
+ - Then move some chain time into future. Then using some trick try to increase the any token price to get IL more than 50%.
+ - Then call `collect` and `burn` on `ArdaContract.sol` which inturn calls the poolmanagers collect and burn functions.
+
+ ### OR
+  - Deploy networks on local then repeat the same process as above.
+
 ### Link to Contracts repo link : [contracts](https://github.com/SaikrishnaReddy1919/arda-task)
