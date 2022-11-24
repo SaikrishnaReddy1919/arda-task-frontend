@@ -1,8 +1,8 @@
-import { gql } from "@apollo/client"
+import { gql } from '@apollo/client'
 
 const POSITIONS = gql`
-    {
-    positions(where: { id: 100 }) {
+  {
+    positions(first: 2) {
       liquidity
       tickLower {
         tickIdx
