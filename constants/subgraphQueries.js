@@ -2,7 +2,7 @@ import { gql } from '@apollo/client'
 
 const POSITIONS = gql`
   {
-    positions(first: 2) {
+    positions(where: { id: 10 }) {
       liquidity
       tickLower {
         tickIdx
@@ -12,14 +12,18 @@ const POSITIONS = gql`
       }
       pool {
         id
+        volumeToken0
+        volumeToken1
       }
       token0 {
         symbol
         decimals
+        volume
       }
       token1 {
         symbol
         decimals
+        volume
       }
     }
   }
